@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Personal web portfolio">
+    <meta name="author" content="Isham Ibrahim">
+    <meta name="image" content="https://images.pexels.com/photos/6368/art-wall-brush-painting.jpg">
+
+    <title>!mi5#@m</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/icon.png' %}" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="{% static 'vendor/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/creative.min.css' %}" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="https://imisham.wordpress.com">Bliss of Solitude</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#motto">Motto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase">
+              <strong>I am <font color="#fafad2">Isham Ibrahim</font></strong>
+            </h1>
+
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <img src="{% static 'img/portfolio/fullsize/me.jpeg' %}" class="rounded-circle" style="max-width:40%" alt="YOLO">
+          </div>
+
+          <div class="col-lg-8 mx-auto">
+            <br>
+            <p class="text-faded mb-2">BACKEND DEVELOPER</p>
+            <p class="text-faded mb-2">HISTORY AND SCIENCE BUFF</p>
+            <p class="text-faded mb-2">FITNESS AND MARTIAL ARTS ENTHUSIAST</p>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">About me</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading text-white">About me</h2>
+            <hr class="light my-4">
+            <p class="text-faded mb-4">Im a backend developer hailing from Mangalore, a place in the west coast of India.
+              I have more than 8 years of experience in software development. I am at present, working with Akamai Technologies set up in Bangalore.
+              <br/> <br/>
+              I graduated from Visvesvaraya University in 2012 with a B.E in Computers. I have focused my professional career on Python and GoLang development.
+              <br/> <br/>
+              Let's connect if you're interested in working with me.</p>
+            <a class="btn btn-light btn-xl js-scroll-trigger" href="#motto">Know more?</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="motto">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">My Motto</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-feed text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Communication</h3>
+              <p class="text-muted mb-0">Good communication can take you places. The art of communication is the language of leadership.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-steam text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Design</h3>
+              <p class="text-muted mb-0">Designing is the most crucial phase in any project development. I put a lot of effort to come up with a perfect design for any project. Once you pass this, the rest is easy.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-group text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Team-work</h3>
+              <p class="text-muted mb-0">I believe in working as a team. The best results are found when each and everyone in a team works towards the same goal collaborating with one another.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-newspaper-o text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Documentation</h3>
+              <p class="text-muted mb-0">A well documented product almost maintains itself. I give a lot of importance to documenting my everyday work.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-0" id="skills">
+      <div class="container-fluid p-0">
+        <div class="row no-gutters popup-gallery">
+          <div class="col-lg-4 col-sm-6">
+            <div class="portfolio-box" >
+              <img class="img-fluid" src="{% static 'img/portfolio/thumbnails/1.jpg' %}" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Front-end
+                  </div>
+                  <div class="project-name">
+                    Bootstrap
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="portfolio-box" >
+              <img class="img-fluid" src="{% static 'img/portfolio/thumbnails/2.jpg' %}" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Back-end
+                  </div>
+                  <div class="project-name">
+                    Python . API . REST . Devops . GOLang
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="portfolio-box" >
+              <img class="img-fluid" src="{% static 'img/portfolio/thumbnails/3.jpg' %}" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Database
+                  </div>
+                  <div class="project-name">
+                    MySQL . MongoDB . DynamoDB . Redis
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="portfolio-box" >
+              <img class="img-fluid" src="{% static 'img/portfolio/thumbnails/4.jpg' %}" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Web
+                  </div>
+                  <div class="project-name">
+                    Django . Flask . Apache . Nginx
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="portfolio-box" >
+              <img class="img-fluid" src="{% static 'img/portfolio/thumbnails/5.jpg' %}" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Cloud and Virtual
+                  </div>
+                  <div class="project-name">
+                    AWS . OpenStack . Docker
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="portfolio-box" >
+              <img class="img-fluid" src="{% static 'img/portfolio/thumbnails/6.jpg' %}" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    CI/CD
+                  </div>
+                  <div class="project-name">
+                    Ansible . Git . SaltStack . Jenkins
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-dark text-white">
+      <div class="container text-center">
+        <h2 class="mb-4">Checkout my Blog!</h2>
+        <a class="btn btn-light btn-xl sr-button" href="https://imisham.wordpress.com/">IMISHAM</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Let's get in touch!</h2>
+            <hr class="my-4">
+            <p class="mb-5">Give me a call OR drop a mail</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+            <p>+91-8904-531154</p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+            <p>
+              <a href="mailto:hisham.0.ibrahim@gmail.com">hisham.0.ibrahim@gmail.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="https://twitter.com/eyashuddin">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.linkedin.com/in/isham-ibrahim-47963156/">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/ishamibrahim">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-center text-muted">Copyright Isham Ibrahim&copy; 2020</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'vendor/scrollreveal/scrollreveal.min.js' %}"></script>
+    <!--<script src="{% static 'vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>-->
+
+    <!-- Custom scripts for this template -->
+    <script src="{% static 'js/creative.min.js' %}"></script>
+
+  </body>
+
+</html>
