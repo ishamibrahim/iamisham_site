@@ -14,13 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from iamisham_app import views
+from django.urls import path, include
+
+import auth
+from iamisham_app import views as imisham_views
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index')
+    path('', imisham_views.index, name='index'),
+    path('auth/', include('auth.urls'), name="auth")
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
