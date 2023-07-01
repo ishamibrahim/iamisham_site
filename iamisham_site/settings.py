@@ -86,7 +86,8 @@ DATABASES = {
     #     },
     # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3'
+        'ENGINE': 'django.db.backends.sqlite3',
+        "NAME": "mydatabase",
     }
 }
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
