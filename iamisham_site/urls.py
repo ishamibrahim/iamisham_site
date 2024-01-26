@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-import auth
 from iamisham_app import views as imisham_views
 from django.conf.urls.static import static
 from django.conf import settings
@@ -24,6 +23,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', imisham_views.index, name='index'),
-    path('auth/', include('auth.urls'), name="auth")
+    path('quizzing/', include('iamisham_app.urls'), name="quizzing"),
+    path('users/', include('authentication.urls'), name="authentication")
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

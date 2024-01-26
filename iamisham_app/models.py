@@ -1,11 +1,22 @@
+import uuid
+
 from django.db import models
 
 # Create your models here.
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+USER = get_user_model()
 
 
-class TestType(models.Model):
+class BaseModel(models.Model):
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
+
+
+class TestType(BaseModel):
     BASIC = "BASIC"
     INTERIM = "INTERIM"
     ADVANCED = "ADVANCED"
@@ -21,46 +32,45 @@ class TestType(models.Model):
         return self.test_type
 
 
-class Question(models.Model):
+class Question(BaseModel):
     question_text = models.CharField(max_length=250)
     pub_date = models.DateTimeField("date published")
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.question_text
 
 
-class Choice(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=200)
-    is_correct = models.BooleanField(default=False)
+class Choice(BaseModel):
+    question = models.ManyToManyField(Question, related_name='choices')
+    choice_text = models.CharField(max_length=200, unique=True)
     votes = models.IntegerField(default=0)
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        unique_together = ('choice_text', 'question')
 
     def __str__(self):
-        return "{} - {}".format(self.choice_text, self.question.question_text[:70])
+        return "{}".format(self.choice_text )
 
 
-class Test(models.Model):
+class CorrectChoice(BaseModel):
+    question = models.OneToOneField(Question, on_delete=models.CASCADE)
+    choice = models.ForeignKey(Choice, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ('question', 'choice')
+
+    def __str__(self):
+        return f"{self.question.question_text} --> {self.choice.choice_text}"
+
+
+class Test(BaseModel):
     name = models.CharField(max_length=300, null=False, blank=False)
     test_type = models.ForeignKey(TestType, on_delete=models.CASCADE)
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
 
 
-class TestQuestion(models.Model):
+class TestQuestion(BaseModel):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    test = models.ForeignKey(Test, on_delete=models.CASCADE)
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
+    test = models.ForeignKey(Test, on_delete=models.CASCADE, related_name='test_questions')
 
     class Meta:
         unique_together = ('question', 'test')
@@ -69,12 +79,10 @@ class TestQuestion(models.Model):
         return "{} - {}".format(self.test.name, self.question.question_text[:30])
 
 
-class TestEvaluation(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+class TestEvaluation(BaseModel):
+    user = models.ForeignKey(USER, on_delete=models.CASCADE)
     test_question = models.ForeignKey(TestQuestion, on_delete=models.CASCADE)
     selected_choice = models.ForeignKey(Choice, on_delete=models.CASCADE)
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
         unique_together = ('test_question', 'user')
