@@ -1,0 +1,32 @@
+version: '3.9'
+services:
+  backend:
+    build: .
+    command: bash -c "python ./iamisham_site/manage.py runserver 0.0.0.0:8000"
+    ports:
+      - 8000:8000
+    expose:
+      - 8000
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+  db:
+    image: postgres:14
+    container_name: postgresContainer
+    restart: always
+    environment:
+        - POSTGRES_DB=imisham_db
+        - POSTGRES_USER=imisham_user
+        - POSTGRES_PASSWORD=imisham_pass
+    ports:
+      - 5432:5432
+    expose:
+      - 5432
+    volumes:
+      - postgres_db:/var/lib/postgresql/data/
+volumes:
+  postgres_db:
+    driver: local

@@ -21,6 +21,6 @@ COPY ./requirements.txt .
 
 expose 8000
 # runs the production server
-ENTRYPOINT ["python", "./iamisham_site/manage.py"]
-CMD ["runserver", "0.0.0.0:8000"]
+#ENTRYPOINT ["python", "./iamisham_site/manage.py"]
+#CMD ["runserver", "0.0.0.0:8000"]
 

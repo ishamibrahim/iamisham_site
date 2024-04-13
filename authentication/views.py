@@ -8,6 +8,7 @@ from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from authentication.models import UserData
 
 from authentication.serializers import UserSerializer
 
@@ -59,3 +60,9 @@ class RegisterView(APIView):
     #     if check_if_user_exists:
     #         pdb.set_trace()
 
+
+class ListView(APIView):
+    def get(self, request):
+        users = UserData.objects.all()
+        serializer = UserSerializer(data=users, many=True)
+        return Response(serializer.data)
