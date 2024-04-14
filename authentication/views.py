@@ -65,4 +65,5 @@ class ListView(APIView):
     def get(self, request):
         users = UserData.objects.all()
         serializer = UserSerializer(data=users, many=True)
-        return Response(serializer.data)
+        serializer_data = serializer.data
+        return Response(serializer_data)
