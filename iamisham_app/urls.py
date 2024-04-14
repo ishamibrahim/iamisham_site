@@ -10,5 +10,4 @@ urlpatterns = [
          .as_view({'post': 'answer_question'})),
     path('tests/<int:test_id>/evaluate', TestAttendViewSet
          .as_view({'get': 'evaluate_test'}))
-
 ]
