@@ -26,4 +26,3 @@ urlpatterns = [
     path('quizzing/', include('iamisham_app.urls'), name="quizzing"),
     path('users/', include('authentication.urls'), name="authentication")
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
