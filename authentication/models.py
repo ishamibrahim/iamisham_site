@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from authentication.manager import UserManager
-# Create your models here.
-
 
 class BaseModel(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
