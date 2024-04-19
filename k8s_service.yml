@@ -6,7 +6,7 @@ metadata:
     deployment_type: webapp
 spec:
   ports: 
-    - port: 8080
+    - port: 8000
       targetPort: 80
       nodePort: 31200
   selector:
