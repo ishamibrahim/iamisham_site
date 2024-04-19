@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: webapp
-          image: eyash27/imisham_basic
+          image: eyash27/imisham-pipeline
           imagePullPolicy: Always
           ports:
             - containerPort: 80
