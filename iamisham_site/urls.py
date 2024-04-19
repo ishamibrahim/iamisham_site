@@ -25,6 +25,4 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', imisham_views.index, name='index'),
-    path('quizzing/', include('iamisham_app.urls'), name="quizzing"),
-    path('users/', include('authentication.urls'), name="authentication")
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

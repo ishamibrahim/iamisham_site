@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: imisham-service
+  labels:
+    deployment_type: webapp
+spec:
+  ports: 
+    - port: 8080
+      targetPort: 80
+      nodePort: 31200
+  selector:
+    deployment_type: webapp
+  type: LoadBalancer
+

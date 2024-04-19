@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'iamisham_app',
-    'authentication',
     'rest_framework_simplejwt'
 ]
 
@@ -79,16 +78,25 @@ WSGI_APPLICATION = 'iamisham_site.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': os.environ.get('POSTGRES_DB'),
+#         'USER': os.environ.get('POSTGRES_USER'),
+#         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+#         'HOST': os.environ.get('POSTGRES_HOST'),
+#         'PORT': os.environ.get('POSTGRES_PORT'),
+#     }
+# }
+
+DATABASE_DIR = os.path.join(BASE_DIR, 'db.sqlite3')
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('POSTGRES_DB'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': os.environ.get('POSTGRES_HOST'),
-        'PORT': os.environ.get('POSTGRES_PORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': DATABASE_DIR
     }
 }
+
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # Password validation
@@ -136,7 +144,6 @@ REST_FRAMEWORK = {
     ]
 }
 
-AUTH_USER_MODEL = "authentication.UserData"
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=10),

@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: imisham-webapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      deployment_type: dev
+  template:
+    metadata:
+      name: imisham-webapp
+      labels:
+        deployment_type: dev
+    spec:
+      containers:
+        - name: webapp
+          image: eyash27/imisham_basic
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
