@@ -9,7 +9,7 @@ spec:
     type: webapp
   ports: 
     - name: http
-      port: 8000
+      port: 8008
       targetPort: 8000
       nodePort: 31201
   type: LoadBalancer
