@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: webapp-test
   annotations:
-    desc: This is a pod for testing working of k8s pod
+    desc: This is a pod for checking k8s pod
 spec:
   containers:
     - name: cont1
