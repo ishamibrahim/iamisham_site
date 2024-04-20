@@ -1,0 +1,13 @@
+kind:  Pod
+apiVersion: v1
+metadata:
+  name: webapp-test
+  annotations:
+    desc: This is a pod for testing the working
+spec:
+  containers:
+    - name: cont1
+      image: eyash27/imisham-pipeline-dev:v1.0
+      ports:
+        - containerPort: 8000
+  restartPolicy: OnFailure

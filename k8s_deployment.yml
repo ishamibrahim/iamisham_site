@@ -3,7 +3,7 @@ apiVersion: apps/v1
 metadata:
   name: imisham-webapp
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       deployment_type: dev
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: webapp
-          image: eyash27/imisham-pipeline
+          image: eyash27/imisham-pipeline-dev:v1.0
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
