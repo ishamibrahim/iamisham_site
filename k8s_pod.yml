@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: cont1
-      image: eyash27/imisham-pipeline-dev:v1.0
+      image: eyash27/imisham-pipeline:latest
       ports:
         - containerPort: 8000
   restartPolicy: OnFailure

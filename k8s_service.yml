@@ -6,11 +6,12 @@ metadata:
     type: webapp
 spec:
   selector:
-    type: webapp
+    app: webservice
   ports: 
     - name: http
       port: 8008
       targetPort: 8000
+      protocol: TCP
       nodePort: 31201
   type: LoadBalancer
 
