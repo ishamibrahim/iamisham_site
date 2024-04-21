@@ -1,3 +1,3 @@
 # iamisham.com
 
-Public Portfolio with k8s updates
+Public Portfolio with k8s updates using minikube
