@@ -14,4 +14,3 @@ spec:
       protocol: TCP
       nodePort: 31201
   type: LoadBalancer
-
